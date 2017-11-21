@@ -14,7 +14,7 @@ docker build . -t redis-nn:latest
 
 ```
 docker run redis-nn
-``
+```
 
 ## Get a CLI on the running container
 
