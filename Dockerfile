@@ -17,5 +17,8 @@ WORKDIR neural-redis-master
 RUN make generic
 
 WORKDIR /
+RUN sed -i -e 's/^bind/#BIND/g' ./redis-unstable/redis.conf
+RUN sed -i -e 's/^protected-mode yes/protected-mode no/g' ./redis-unstable/redis.conf
+
 EXPOSE 6379
 ENTRYPOINT ["redis-unstable/src/redis-server", "--loadmodule", "neural-redis-master/neuralredis.so"]

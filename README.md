@@ -13,7 +13,7 @@ docker build . -t redis-nn:latest
 ## Run
 
 ```
-docker run redis-nn
+docker run --publish 6378:6379 redis-nn
 ```
 
 ## Get a CLI on the running container
